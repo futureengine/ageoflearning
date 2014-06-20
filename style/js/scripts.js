@@ -926,6 +926,8 @@ jQuery(document).ready(function() {
 /*-----------------------------------------------------------------------------------*/
 jQuery(document).ready(function() {
     
+    /** JOBS LOADING FROM PHP RESOURCE **/
+
     // check if this is jobs page
     var $jobs_block = jQuery('.jobs-block');
     
@@ -968,11 +970,27 @@ jQuery(document).ready(function() {
                     $li.html(category_html);
 
                     $jobs_block.append($li);
+
+                    /** RESUME FORM **/
+                    jQuery('.submit_resume').on('click', function(event){
+                        event.preventDefault();
+
+                        jQuery(this).parent().find('.resume_form').slideDown(500);
+                    });
+
+                    jQuery('.resume_form .close_form_img').on('click', function(event){
+                        event.preventDefault();
+
+                        jQuery(this).parent().slideUp(500);
+                    });
                 });
             },
         });
 
     }
+
+    
+    
 
 });
 

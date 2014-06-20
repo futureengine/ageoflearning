@@ -1962,6 +1962,7 @@ textarea {
 /*  CAREERS JOBS
 /*-----------------------------------------------------------------------------------*/
 #jobs-block-templates { display: none; }
+.jobs-block [class^="icon-"], .jobs-block [class*=" icon-"] { font-size: 18px; }
 .job-section { margin: 10px 0; }
 
 /*-----------------------------------------------------------------------------------*/

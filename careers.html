@@ -97,60 +97,47 @@
                 <div class="container inner">
                     <div id="comments">
                         <h3 class="section-title">Current Openings</h3>
-                        <ol id="singlecomments" class="commentlist">
-                            <li>
-                                <!-- /.span8 -->
-                            <li>
-                                <div class="user"><img alt="" src="style/images/icon/icon-monster.png" class="avatar" /></div>
+
+                        <ol id="singlecomments" class="commentlist jobs-block">
+                            
+                        </ol>
+
+                        <div id="jobs-block-templates">
+                            <!-- used to create new job categories html -->
+                            <div class="job-category-template job-category">
+                                <div class="user">
+                                    <img alt="%%department%%" src="style/images/icon/%%department%%.png" class="avatar" />
+                                </div>
                                 <div class="message">
-                                    <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> Associate Producer, iOS <i class="icon-down-circled-1 pull-right"></i></a> </i></div>
-                                    <div id="collapseTwo" class="accordion-body collapse">
+                                    %%jobs%%
+                                </div>
+                            </div>
+
+                            <!-- used to create new jobs html -->
+                            <div class="job-template job">
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-%%id%%"><span class="title">%%title%%</span><span class="icon-down-circled-1 pull-right"></span></a>
+                                    </div>
+                                    <div id="collapse-%%id%%" class="accordion-body collapse">
                                         <div class="accordion-inner">
-                                            We are looking for an artist who will be responsible for the conceptualization and execution of illustrated and/or animated props, animals, and characters for online use.<br><br>
-                                            <h3>Qualifications:</h3>
-                                            Must be highly skilled in Flash animation, with a strong sense of timing and appeal while keeping animations clear and on model<br><br>
-                                            Ability to utilize a variety of Flash techniques as pertaining to animation, including tweening, nesting, the use of symbols, etc.<br><br>
-                                            Must be skilled in Flash illustration, including quick and efficient sketches, clear composition, strong inking ability and a strong sense of color<br><br>
-                                            Ability to maintain brand identity throughout work, following established guidelines and drawing on model as required<br><br>
-                                            Ability to work collaboratively within a production pipeline<br><br>
-                                            Must have a willingness to learn and the ability to take direction and make quick adjustments to artwork as needed<br><br>
-                                            Ability to adapt to a range of animation and illustration styles, including both cartoon and realistic, for a variety of subjects including the human figure, animals, props, backgrounds, etc.<br><br>
-                                            Must demonstrate an advanced level of proficiency in Flash, as well as proficiency in Photoshop and Illustrator<br><br>
-                                            Strong communication skills<br><br>
-                                            Ability to work within deadlines and switch between priorities as needed<br><br>
-                                            Only candidates selected for an interview will be contacted. Eligible employees must be able to take a full-time, in-house position. No telecommuting.<br><br>
-                                            To Apply:
-                                            Provide your cover letter, resumé and salary requirements to be considered for this position. In your cover letter, please explain why this position would be of interest to you professionally and what you believe you could contribute to this effort. Candidates must include a link to their portfolio or provide work samples as part of the application process. Only complete submissions will be considered.
-                                            Please fill in the form below or email your cover letter, resumé, and salary requirements to hr@ageoflearning.com.
-                                            <br><br>
+                                            <div class="intro job-section">
+                                                %%intro_text%%
+                                            </div>
+                                            <div class="duties job-section">
+                                                <h3>Duties:</h3>
+                                                %%duties%%
+                                            </div>
+                                            <div class="qualifications job-section">
+                                                <h3>Qualifications:</h3>
+                                                %%qualifications%%
+                                            </div>
                                             <input type="submit" value="Submit Resume" name="submit" class="btn btn-submit bm0" />
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /.accordion-group -->
-                            <li>
-                                <div class="user"><img alt="" src="style/images/icon/icon-monster.png" class="avatar" /></div>
-                                <div class="message">
-                                    <div class="accordion-group">
-                                        <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> Clean & Professional Design </a> </div>
-                                        <div id="collapseTwo" class="accordion-body collapse">
-                                            <div class="accordion-inner"> Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.accordion-group -->
-                                    <div class="accordion-group">
-                                        <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> Retina-ready Graphics </a> </div>
-                                        <div id="collapseThree" class="accordion-body collapse">
-                                            <div class="accordion-inner"> Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.accordion-group --> 
-                                </div>
-                                <!-- /.accordion --> 
-                                <!-- /.span8 --> 
-                            </li>
-                            </li>
-                        </ol>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- .container --> 

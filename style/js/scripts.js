@@ -920,3 +920,81 @@ jQuery(document).ready(function() {
             speed:200
           });
         });
+
+/*-----------------------------------------------------------------------------------*/
+/*  CAREERS JOBS
+/*-----------------------------------------------------------------------------------*/
+jQuery(document).ready(function() {
+    
+    // check if this is jobs page
+    var $jobs_block = jQuery('.jobs-block');
+    
+    if ($jobs_block.length > 0) {
+
+        // get jobs from web resource
+        var jobs_url = "php/jobs.php";
+        
+        jQuery.ajax({
+            url: jobs_url,
+            success: function(data){
+
+                // get data
+                var categoriesObject = jQuery.parseJSON( data );
+
+                // get templates
+                var $categoryTemplate = jQuery('#jobs-block-templates .job-category-template');
+                var $jobTemplate = jQuery('#jobs-block-templates .job-template');
+
+                // create categories
+                jQuery.each(categoriesObject, function(departament_key, json_jobs){
+                    var $cat_template = $categoryTemplate.clone().removeClass('job-tcategory-template');
+                    var cat_data = { dapartment: departament_key, jobs: '' }
+
+                    // turn json objects into html
+                    var jobs_html = '';
+                    jQuery.each(json_jobs, function(index, json_job){
+                        var $template = $jobTemplate.clone().removeClass('job-template');
+
+                        var job_html = dataToHtml($template, json_job);
+
+                        jobs_html += job_html;
+                    });
+
+                    cat_data.jobs = jobs_html;
+
+                    // get category html
+                    var category_html = dataToHtml($cat_template, cat_data);
+                    var $li = jQuery('<li></li>');
+                    $li.html(category_html);
+
+                    $jobs_block.append($li);
+                });
+            },
+        });
+
+    }
+
+});
+
+/*-----------------------------------------------------------------------------------*/
+/*  Util functions
+/*-----------------------------------------------------------------------------------*/
+function dataToHtml($template, data) {
+    var html =  $template.html();
+    html = html.trim();
+
+    // replace all found keys in template html
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+            var text = data[key];//.replace(/(?:\r\n|\r|\n)/g, '<br />');
+            var expression = '/%%'+key+'%%/gi';
+            var regex = new RegExp("%%" + key + "%%", "gi");
+            html = html.replace(regex, text);
+        }
+    }
+
+    return html;
+}
+
+
+

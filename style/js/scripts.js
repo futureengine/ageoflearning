@@ -685,6 +685,14 @@ $(document).ready(function() {
 							shadow:0
 
 	});
+
+    setTimeout(function(){
+        $('.fixed-caption .logo-caption').addClass('ready');
+    }, 200);
+    setTimeout(function(){
+        $('.fixed-caption .text-caption').addClass('ready');
+    }, 900);
+    
 });
 /*-----------------------------------------------------------------------------------*/
 /*	PORTFOLIO WIDE SLIDER

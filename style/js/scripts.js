@@ -948,7 +948,7 @@ jQuery(document).ready(function() {
                 // create categories
                 jQuery.each(categoriesObject, function(departament_key, json_jobs){
                     var $cat_template = $categoryTemplate.clone().removeClass('job-tcategory-template');
-                    var cat_data = { dapartment: departament_key, jobs: '' }
+                    var cat_data = { department: departament_key, jobs: '' }
 
                     // turn json objects into html
                     var jobs_html = '';

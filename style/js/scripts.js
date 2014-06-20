@@ -635,7 +635,7 @@ jQuery(document).ready(function () {
 /*-----------------------------------------------------------------------------------*/
 $(document).ready(function() {
 	if ($.fn.cssOriginal != undefined) $.fn.css = $.fn.cssOriginal;
-	$('.fullwidthbanner').revolution({
+	var revslider = $('.fullwidthbanner').revolution({
 							delay:9000,
 							startwidth:1170,
 							startheight:600,
@@ -686,12 +686,16 @@ $(document).ready(function() {
 
 	});
 
-    setTimeout(function(){
-        $('.fixed-caption .logo-caption').addClass('ready');
-    }, 200);
-    setTimeout(function(){
-        $('.fixed-caption .text-caption').addClass('ready');
-    }, 900);
+    if(typeof revslider !== 'undefined') {
+        revslider.on('revolution.slide.onloaded', function() {
+            setTimeout(function(){
+                $('.fixed-caption .logo-caption').addClass('ready');
+            }, 200);
+            setTimeout(function(){
+                $('.fixed-caption .text-caption').addClass('ready');
+            }, 900);
+        });
+    }
     
 });
 /*-----------------------------------------------------------------------------------*/

@@ -736,7 +736,7 @@ website:   	http://www.themepunch.com
 		-	TP BANNER TIMER		-
 *************************************/
 .tp-bannertimer								{	width:100%; height:10px; background:url(../assets/timer.png);position:absolute; z-index:200;top:0px;}
-.tp-bannertimer.tp-bottom					{	display:none; bottom:0px; height:5px; top:auto;}
+.tp-bannertimer.tp-bottom					{	bottom:0px;height:5px; top:auto;}
 
 
 

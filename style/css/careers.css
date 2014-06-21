@@ -74,7 +74,7 @@ ul.job_list li.job_list_item { margin-bottom:20px; }
 
 .error_text { color:#ee0000; font-size:13px; }
 .form_trl_error { clear:left; position:relative; top:-12px; left:62px; display:none; }
-.cl_resume_error_div { height:3px; position:relative; margin:5px 0px; display:none; }
+.cl_resume_error_div { position:relative; margin:5px 0px; display:none; }
 .cover_letter_error { position:absolute; top:0px; left:0px; display:none; }
 .resume_error { position:absolute; top:0px; right:0px; display:none; }
 .code_samples_error { clear:both; height:3px; margin-top:3px; display:none; }

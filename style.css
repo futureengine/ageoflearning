@@ -2916,7 +2916,7 @@ textarea {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .fixed-caption .text-caption { font-size: 6px; }
     .fixed-caption { min-height: 20%; }
 

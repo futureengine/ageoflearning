@@ -162,11 +162,14 @@ function removeCodeSample(fileID) {
 }
 
 function validateCareerForm(jobID) {
-	var errorDivs = new Array("name_error_","email_error_","salary_error_","cl_resume_error_","cover_letter_error_","resume_error_","portafolio_error_");
-	for(i=0;i<errorDivs.length;i++) {
-		document.getElementById(errorDivs[i]+jobID).style.display = "none";
-	}
-	var activeTab = window.location.pathname.split('/')[2];
+	// hide previous errors
+	jQuery('.error_text').hide();
+	// var errorDivs = new Array("name_error_","email_error_","salary_error_","cl_resume_error_","cover_letter_error_","resume_error_","portafolio_error_");
+	// for(i=0;i<errorDivs.length;i++) {
+	// 	document.getElementById(errorDivs[i]+jobID).style.display = "none";
+	// }
+
+	var activeTab = jQuery('#name_input_'+jobID).parents('.job-category').attr('id');//window.location.pathname.split('/')[2];
 	var supportedTypes = /(pdf|txt|rtf|doc|docx|html)/i;
 	var errors = { 'errors':false };
 	var name = document.getElementById("name_input_"+jobID).value;

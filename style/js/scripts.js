@@ -945,12 +945,31 @@ jQuery(document).ready(function() {
 
                 // get templates
                 var $categoryTemplate = jQuery('#jobs-block-templates .job-category-template');
-                var $jobTemplate = jQuery('#jobs-block-templates .job-template');
 
                 // create categories
                 jQuery.each(categoriesObject, function(departament_key, json_jobs){
                     var $cat_template = $categoryTemplate.clone().removeClass('job-tcategory-template');
                     var cat_data = { department: departament_key, jobs: '' }
+
+                    // select job template
+                    var $jobTemplate = {};
+                    switch(departament_key) {
+                        case 'developers':
+                            $jobTemplate = jQuery('#jobs-block-templates .job-template-developers');
+                            break;
+                        case 'qa':
+                        case 'cs':
+                            $jobTemplate = jQuery('#jobs-block-templates .job-template-qacs');
+                            break;
+                        case 'animation':
+                        case 'illustration':
+                        case 'gd':
+                            $jobTemplate = jQuery('#jobs-block-templates .job-template-animationillustrationgd');
+                            break;
+                        default:
+                            $jobTemplate = jQuery('#jobs-block-templates .job-template');
+                    }
+                    
 
                     // turn json objects into html
                     var jobs_html = '';

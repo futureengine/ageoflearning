@@ -106,17 +106,145 @@
 
                         <div id="jobs-block-templates">
                             <!-- used to create new job categories html -->
-                            <div class="job-category-template job-category %%department%%">
-                                <!-- <div class="user">
-                                    <img alt="%%department%%" src="style/images/icon/%%department%%.png" class="avatar" />
-                                </div> -->
-                                <div class="message">
-                                    %%jobs%%
+                            <div class="job-category-template job-category">
+                                <div class="job-category" id="%%department%%">
+                                    <!-- <div class="user">
+                                        <img alt="%%department%%" src="style/images/icon/%%department%%.png" class="avatar" />
+                                    </div> -->
+                                    <div class="message">
+                                        %%jobs%%
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- used to create new jobs html -->
+                            <!-- used to create new developers jobs html -->
                             <div class="job-template job">
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-%%id%%"><span class="title">%%title%%</span><span class="icon-down-circled-1 pull-right"></span></a>
+                                    </div>
+                                    <div id="collapse-%%id%%" class="accordion-body collapse">
+                                        <div class="accordion-inner">
+                                            <div class="intro job-section">
+                                                %%intro_text%%
+                                            </div>
+                                            <div class="duties job-section">
+                                                <h3>Duties:</h3>
+                                                %%duties%%
+                                            </div>
+                                            <div class="qualifications job-section">
+                                                <h3>Qualifications:</h3>
+                                                %%qualifications%%
+                                            </div>
+
+                                            <input type="button" value="Submit Resume" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
+
+                                            <div id="resume_form_%%id%%" class="resume_form">
+                                                <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
+                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="" method="post" id="form_%%id%%">
+                                                    <input type="hidden" value="subby" name="action">
+                                                    <input type="hidden" value="%%id%%" name="job_id">
+                                                    <input type="hidden" value="%%departments%%" name="category">
+
+                                                    <div class="form_top_row">
+                                                        <div class="form_top_row_left">
+                                                            <div class="form_trl_row">
+                                                                <div class="input_label form_trl_label">Name</div>
+                                                                <div class="form_trl_input_div">
+                                                                    <input type="text" value="" name="name" id="name_input_%%id%%" class="form_trl_input">
+                                                                </div>
+                                                            </div>
+                                                            <div id="name_error_%%id%%" class="error_text form_trl_error">Please enter your name.</div>
+                                                            <div class="form_trl_row">
+                                                                <div class="input_label form_trl_label">Email</div>
+                                                                <div class="form_trl_input_div">
+                                                                    <input type="text" value="" name="email" id="email_input_%%id%%" class="form_trl_input">
+                                                                </div>
+                                                            </div>
+                                                            <div id="email_error_%%id%%" class="error_text form_trl_error">Please enter a valid email address.</div>
+                                                            <div class="form_trl_row">
+                                                                <div class="input_label form_trl_label">Phone</div>
+                                                                <div class="form_trl_input_div">
+                                                                    <input type="text" value="" name="phone" id="phone_input_%%id%%" class="form_trl_input">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_top_row_right">
+                                                            <div class="input_label form_trr_label">Best time to be contacted</div>
+                                                            <div class="form_dropdown_div">
+                                                                <select name="best_time" id="best_name_%%id%%" class="form_dropdown">
+                                                                    <option value="morning">Morning</option>
+                                                                    <option value="afternoon">Afternoon</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input_label cover_letter_label">Cover Letter</div>
+                                                    <div class="cover_letter_textarea_div">
+                                                        <textarea onblur="ABCmouseUtils.preText(this, 'Type here or upload your cover letter below.');" onfocus="ABCmouseUtils.preText(this, 'Type here or upload your cover letter below.');" value="" name="typed_cover_letter" id="cover_letter_textarea_%%id%%" class="cover_letter_textarea" style="color: rgb(102, 102, 102);">Type here or upload your cover letter below.</textarea>
+                                                    </div>
+                                                    <div class="supported_file_types">
+                                                        <span class="bold">Supported file types</span> (.pdf, .txt, .rtf, .doc, .docx, .html, .php, .js, .inc, .css).  File size limit is 2MB.
+                                                    </div>
+                                                    <div class="cover_letter_input_container file_input_container">
+                                                        <div class="displayed_div">
+                                                            <div class="displayed_file_submit btn">
+                                                                <div class="displayed_cover_letter_text">Upload Cover Letter</div>
+                                                            </div>
+                                                            <div class="fake_input_box fake_cover_letter_box" id="cover_letter_%%id%%"></div>
+                                                        </div>
+                                                        <input type="file" onchange="updateFile(this,'coverLetter');" name="cover_letter" class="cover_letter_input file_input" id="cover_letter_input_%%id%%">         
+                                                        
+                                                        <div onclick="removeFile(this,'coverLetter');" class="remove_cover_letter remove_file btn" id="remove_cover_letter_%%id%%">
+                                                            <div class="remove_cover_letter_text">Remove Cover Letter</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="resume_input_container file_input_container">
+                                                        <div class="displayed_div">
+                                                            <div class="displayed_file_submit btn">
+                                                                <div class="displayed_resume_text">Upload Resume<span class="acute_002">ú</span></div>
+                                                            </div>
+                                                            <div class="fake_input_box fake_resume_box" id="resume_%%id%%"></div>
+                                                        </div>
+                                                        <input type="file" onchange="updateFile(this,'resume');" name="resume" class="resume_input file_input" id="resume_input_%%id%%">   
+
+                                                        <div onclick="removeFile(this,'resume');" class="remove_resume remove_file btn" id="remove_resume_%%id%%">
+                                                            <div class="remove_resume_text">Remove Resumé</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                    <div id="cl_resume_error_%%id%%" class="cl_resume_error_div">
+                                                        <div id="cover_letter_error_%%id%%" class="error_text cover_letter_error"></div>
+                                                        <div id="resume_error_%%id%%" class="error_text resume_error"></div>
+                                                    </div>
+                                                    
+                                                    <div class="clear"></div>
+
+                                                    <div class="salary_request_container">
+                                                        <div class="input_label salary_request_label">Salary Requirement</div>
+                                                        <div class="salary_input_div">
+                                                            <input type="text" value="" name="salary" id="salary_input_%%id%%" class="salary_input">
+                                                        </div>
+                                                        <div id="salary_error_%%id%%" class="error_text salary_error">Please provide a salary requirement.</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                    <!-- <div class="master_submit no_shift_required" id="submit_div_%%id%%">
+                                                        <div class="master_submit_glare"></div>
+                                                        <div class="master_submit_text">Submit</div>
+                                                    </div> -->
+
+                                                    <input type="submit" value="Submit" class="master_submit_input no_shift_required btn btn-submit bm0" id="submit_%%id%%">    
+                                                </form>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- template -->
+                            <!-- used to create new developers jobs html -->
+                            <div class="job-template-developers job">
                                 <div class="accordion-group">
                                     <div class="accordion-heading">
                                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-%%id%%"><span class="title">%%title%%</span><span class="icon-down-circled-1 pull-right"></span></a>
@@ -263,7 +391,276 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div><!-- template -->
+                            <!-- used to create new developers jobs html -->
+                            <div class="job-template-qacs job">
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-%%id%%"><span class="title">%%title%%</span><span class="icon-down-circled-1 pull-right"></span></a>
+                                    </div>
+                                    <div id="collapse-%%id%%" class="accordion-body collapse">
+                                        <div class="accordion-inner">
+                                            <div class="intro job-section">
+                                                %%intro_text%%
+                                            </div>
+                                            <div class="duties job-section">
+                                                <h3>Duties:</h3>
+                                                %%duties%%
+                                            </div>
+                                            <div class="qualifications job-section">
+                                                <h3>Qualifications:</h3>
+                                                %%qualifications%%
+                                            </div>
+
+                                            <input type="button" value="Submit Resume" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
+
+                                            <div id="resume_form_%%id%%" class="resume_form">
+                                                <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
+                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="" method="post" id="form_%%id%%">
+                                                    <input type="hidden" value="subby" name="action">
+                                                    <input type="hidden" value="%%id%%" name="job_id">
+                                                    <input type="hidden" value="%%departments%%" name="category">
+
+                                                    <div class="form_top_row">
+                                                        <div class="form_top_row_left">
+                                                            <div class="form_trl_row">
+                                                                <div class="input_label form_trl_label">Name</div>
+                                                                <div class="form_trl_input_div">
+                                                                    <input type="text" value="" name="name" id="name_input_%%id%%" class="form_trl_input">
+                                                                </div>
+                                                            </div>
+                                                            <div id="name_error_%%id%%" class="error_text form_trl_error">Please enter your name.</div>
+                                                            <div class="form_trl_row">
+                                                                <div class="input_label form_trl_label">Email</div>
+                                                                <div class="form_trl_input_div">
+                                                                    <input type="text" value="" name="email" id="email_input_%%id%%" class="form_trl_input">
+                                                                </div>
+                                                            </div>
+                                                            <div id="email_error_%%id%%" class="error_text form_trl_error">Please enter a valid email address.</div>
+                                                            <div class="form_trl_row">
+                                                                <div class="input_label form_trl_label">Phone</div>
+                                                                <div class="form_trl_input_div">
+                                                                    <input type="text" value="" name="phone" id="phone_input_%%id%%" class="form_trl_input">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_top_row_right">
+                                                            <div class="input_label form_trr_label">Best time to be contacted</div>
+                                                            <div class="form_dropdown_div">
+                                                                <select name="best_time" id="best_name_%%id%%" class="form_dropdown">
+                                                                    <option value="morning">Morning</option>
+                                                                    <option value="afternoon">Afternoon</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input_label cover_letter_label">Cover Letter</div>
+                                                    <div class="cover_letter_textarea_div">
+                                                        <textarea onblur="ABCmouseUtils.preText(this, 'Type here or upload your cover letter below.');" onfocus="ABCmouseUtils.preText(this, 'Type here or upload your cover letter below.');" value="" name="typed_cover_letter" id="cover_letter_textarea_%%id%%" class="cover_letter_textarea" style="color: rgb(102, 102, 102);">Type here or upload your cover letter below.</textarea>
+                                                    </div>
+                                                    <div class="supported_file_types">
+                                                        <span class="bold">Supported file types</span> (.pdf, .txt, .rtf, .doc, .docx, .html, .php, .js, .inc, .css).  File size limit is 2MB.
+                                                    </div>
+                                                    <div class="cover_letter_input_container file_input_container">
+                                                        <div class="displayed_div">
+                                                            <div class="displayed_file_submit btn">
+                                                                <div class="displayed_cover_letter_text">Upload Cover Letter</div>
+                                                            </div>
+                                                            <div class="fake_input_box fake_cover_letter_box" id="cover_letter_%%id%%"></div>
+                                                        </div>
+                                                        <input type="file" onchange="updateFile(this,'coverLetter');" name="cover_letter" class="cover_letter_input file_input" id="cover_letter_input_%%id%%">         
+                                                        
+                                                        <div onclick="removeFile(this,'coverLetter');" class="remove_cover_letter remove_file btn" id="remove_cover_letter_%%id%%">
+                                                            <div class="remove_cover_letter_text">Remove Cover Letter</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="resume_input_container file_input_container">
+                                                        <div class="displayed_div">
+                                                            <div class="displayed_file_submit btn">
+                                                                <div class="displayed_resume_text">Upload Resume<span class="acute_002">ú</span></div>
+                                                            </div>
+                                                            <div class="fake_input_box fake_resume_box" id="resume_%%id%%"></div>
+                                                        </div>
+                                                        <input type="file" onchange="updateFile(this,'resume');" name="resume" class="resume_input file_input" id="resume_input_%%id%%">   
+
+                                                        <div onclick="removeFile(this,'resume');" class="remove_resume remove_file btn" id="remove_resume_%%id%%">
+                                                            <div class="remove_resume_text">Remove Resumé</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                    <div id="cl_resume_error_%%id%%" class="cl_resume_error_div">
+                                                        <div id="cover_letter_error_%%id%%" class="error_text cover_letter_error"></div>
+                                                        <div id="resume_error_%%id%%" class="error_text resume_error"></div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                    <div class="salary_request_container">
+                                                        <div class="input_label salary_request_label">Salary Requirement</div>
+                                                        <div class="salary_input_div">
+                                                            <input type="text" value="" name="salary" id="salary_input_%%id%%" class="salary_input">
+                                                        </div>
+                                                        <div id="salary_error_%%id%%" class="error_text salary_error">Please provide a salary requirement.</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                    <div class="input_label available_shifts_title">Shifts Available</div>
+                                                    
+                                                    <div id="available_shifts_error_%%id%%" class="error_text available_shifts_error">Please select your available shifts.</div>
+                                                    
+                                                    <div id="available_shifts_%%id%%" class="available_shifts">
+                                                        <div class="available_shift">
+                                                            <input type="checkbox" id="radio_shift_3_%%id%%" name="shifts[]" value="3" style="display: none;"><img onload="CustomRadioButton.add(this)" offimg="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" onimg="https://cdni.abcmouse.com/home/careers/checkbox_on.jpg" name="shifts[]" value="3" custominput="customCheckBox" src="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" class="shift_checkbox" id="shift_3_%%id%%">
+                                                            <div class="input_label checkbox_label">M &ndash; F 9:30 AM &ndash; 6:30 PM</div>
+                                                        </div>
+                                                        <div class="available_shift">
+                                                            <input type="checkbox" id="radio_shift_4_%%id%%" name="shifts[]" value="4" style="display: none;"><img onload="CustomRadioButton.add(this)" offimg="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" onimg="https://cdni.abcmouse.com/home/careers/checkbox_on.jpg" name="shifts[]" value="4" custominput="customCheckBox" src="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" class="shift_checkbox" id="shift_4_%%id%%">
+                                                            <div class="input_label checkbox_label">M &ndash; F 11:00 AM &ndash; 8:00 PM</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                    <input type="submit" value="Submit" class="master_submit_input no_shift_required btn btn-submit bm0" id="submit_%%id%%">    
+                                                </form>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- template -->
+                            <!-- used to create new developers jobs html -->
+                            <div class="job-template-animationillustrationgd job">
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-%%id%%"><span class="title">%%title%%</span><span class="icon-down-circled-1 pull-right"></span></a>
+                                    </div>
+                                    <div id="collapse-%%id%%" class="accordion-body collapse">
+                                        <div class="accordion-inner">
+                                            <div class="intro job-section">
+                                                %%intro_text%%
+                                            </div>
+                                            <div class="duties job-section">
+                                                <h3>Duties:</h3>
+                                                %%duties%%
+                                            </div>
+                                            <div class="qualifications job-section">
+                                                <h3>Qualifications:</h3>
+                                                %%qualifications%%
+                                            </div>
+
+                                            <input type="button" value="Submit Resume" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
+
+                                            <div id="resume_form_%%id%%" class="resume_form">
+                                                <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
+                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="" method="post" id="form_%%id%%">
+                                                    <input type="hidden" value="subby" name="action">
+                                                    <input type="hidden" value="%%id%%" name="job_id">
+                                                    <input type="hidden" value="%%departments%%" name="category">
+
+                                                    <div class="form_top_row">
+                                                        <div class="form_top_row_left">
+                                                            <div class="form_trl_row">
+                                                                <div class="input_label form_trl_label">Name</div>
+                                                                <div class="form_trl_input_div">
+                                                                    <input type="text" value="" name="name" id="name_input_%%id%%" class="form_trl_input">
+                                                                </div>
+                                                            </div>
+                                                            <div id="name_error_%%id%%" class="error_text form_trl_error">Please enter your name.</div>
+                                                            <div class="form_trl_row">
+                                                                <div class="input_label form_trl_label">Email</div>
+                                                                <div class="form_trl_input_div">
+                                                                    <input type="text" value="" name="email" id="email_input_%%id%%" class="form_trl_input">
+                                                                </div>
+                                                            </div>
+                                                            <div id="email_error_%%id%%" class="error_text form_trl_error">Please enter a valid email address.</div>
+                                                            <div class="form_trl_row">
+                                                                <div class="input_label form_trl_label">Phone</div>
+                                                                <div class="form_trl_input_div">
+                                                                    <input type="text" value="" name="phone" id="phone_input_%%id%%" class="form_trl_input">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_top_row_right">
+                                                            <div class="input_label form_trr_label">Best time to be contacted</div>
+                                                            <div class="form_dropdown_div">
+                                                                <select name="best_time" id="best_name_%%id%%" class="form_dropdown">
+                                                                    <option value="morning">Morning</option>
+                                                                    <option value="afternoon">Afternoon</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input_label cover_letter_label">Cover Letter</div>
+                                                    <div class="cover_letter_textarea_div">
+                                                        <textarea onblur="ABCmouseUtils.preText(this, 'Type here or upload your cover letter below.');" onfocus="ABCmouseUtils.preText(this, 'Type here or upload your cover letter below.');" value="" name="typed_cover_letter" id="cover_letter_textarea_%%id%%" class="cover_letter_textarea" style="color: rgb(102, 102, 102);">Type here or upload your cover letter below.</textarea>
+                                                    </div>
+                                                    <div class="supported_file_types">
+                                                        <span class="bold">Supported file types</span> (.pdf, .txt, .rtf, .doc, .docx, .html, .php, .js, .inc, .css).  File size limit is 2MB.
+                                                    </div>
+                                                    <div class="cover_letter_input_container file_input_container">
+                                                        <div class="displayed_div">
+                                                            <div class="displayed_file_submit btn">
+                                                                <div class="displayed_cover_letter_text">Upload Cover Letter</div>
+                                                            </div>
+                                                            <div class="fake_input_box fake_cover_letter_box" id="cover_letter_%%id%%"></div>
+                                                        </div>
+                                                        <input type="file" onchange="updateFile(this,'coverLetter');" name="cover_letter" class="cover_letter_input file_input" id="cover_letter_input_%%id%%">         
+                                                        
+                                                        <div onclick="removeFile(this,'coverLetter');" class="remove_cover_letter remove_file btn" id="remove_cover_letter_%%id%%">
+                                                            <div class="remove_cover_letter_text">Remove Cover Letter</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="resume_input_container file_input_container">
+                                                        <div class="displayed_div">
+                                                            <div class="displayed_file_submit btn">
+                                                                <div class="displayed_resume_text">Upload Resume<span class="acute_002">ú</span></div>
+                                                            </div>
+                                                            <div class="fake_input_box fake_resume_box" id="resume_%%id%%"></div>
+                                                        </div>
+                                                        <input type="file" onchange="updateFile(this,'resume');" name="resume" class="resume_input file_input" id="resume_input_%%id%%">   
+
+                                                        <div onclick="removeFile(this,'resume');" class="remove_resume remove_file btn" id="remove_resume_%%id%%">
+                                                            <div class="remove_resume_text">Remove Resumé</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                    <div id="cl_resume_error_%%id%%" class="cl_resume_error_div">
+                                                        <div id="cover_letter_error_%%id%%" class="error_text cover_letter_error"></div>
+                                                        <div id="resume_error_%%id%%" class="error_text resume_error"></div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                    <div class="portfolio_link_container">
+                                                        <div class="input_label portfolio_link_label">Portfolio Link</div>
+                                                        <div class="portfolio_input_div">
+                                                            <input type="text" value="" name="portfolio_link" id="portafolio_input_11710" class="portfolio_input">
+                                                        </div>
+                                                        <div id="portafolio_error_11710" class="error_text portafolio_error">Please provide a portfolio link.</div>
+                                                    </div>
+
+                                                    <div class="salary_request_container">
+                                                        <div class="input_label salary_request_label">Salary Requirement</div>
+                                                        <div class="salary_input_div">
+                                                            <input type="text" value="" name="salary" id="salary_input_%%id%%" class="salary_input">
+                                                        </div>
+                                                        <div id="salary_error_%%id%%" class="error_text salary_error">Please provide a salary requirement.</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                    <!-- <div class="master_submit no_shift_required" id="submit_div_%%id%%">
+                                                        <div class="master_submit_glare"></div>
+                                                        <div class="master_submit_text">Submit</div>
+                                                    </div> -->
+
+                                                    <input type="submit" value="Submit" class="master_submit_input no_shift_required btn btn-submit bm0" id="submit_%%id%%">    
+                                                </form>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- template -->
                         </div>
                     </div>
                 </div>
@@ -341,6 +738,7 @@
         <script src="style/js/jquery.fitvids.js"></script> 
         <script src="style/js/view.min.js?auto"></script> 
         <script src="style/js/abcmouse_utils.js"></script>
+        <script src="style/js/custom-radio.js"></script>
         <script src="style/js/careers.js"></script>
         <script src="style/js/scripts.js"></script>
     </body>

@@ -1141,20 +1141,23 @@ footer .social li {
 .fixed-caption {
     color: #fff;
     position: absolute;
-    right: 132px;
+    right: 9%;
     text-align: right;
-    top: 460px;
-    min-height: 78px;
+    bottom: 10%;
+    min-height: 13%;
     z-index: 1000;
+    width: 26%;
 }
 .fixed-caption .logo-caption {
+    width: 100%;
     position: absolute;
     opacity: 0;
-    top: -50px;
+    top: -100%;
     right: 0;
     transition: opacity 900ms cubic-bezier(0.39, 0.575, 0.565, 1) 0s,
                 top 900ms cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
 }
+.fixed-caption .logo-caption img { max-width: 100%; }
 .fixed-caption .logo-caption.ready {
     opacity: 1;
     top: 0;
@@ -1167,7 +1170,7 @@ footer .social li {
     font-family: 'Roboto Slab',serif;
     font-weight: 400;
     position: absolute;
-    right: -50px;
+    right: 10%;
     bottom: 0;
     opacity: 0;
     transition: opacity 600ms cubic-bezier(0.19, 1, 0.22, 1) 0s,
@@ -2708,6 +2711,8 @@ textarea {
 	#testimonials {
 	    width: 90%
 	}
+
+    .fixed-caption .text-caption { font-size: 13px; }
 }
 @media (max-width: 767px) { 
 	body {
@@ -2845,6 +2850,7 @@ textarea {
 	.tp-bullets {
 		bottom: 20px !important;
 	}
+
 	.blog.no-sidebar .post,
 	.blog.no-sidebar .pagination,
 	.blog.no-sidebar #comments,
@@ -2895,4 +2901,11 @@ textarea {
 	    padding: 6px 14px 8px 14px !important;
 	    font-size: 11px;
 	}
+
+    .fixed-caption .text-caption { font-size: 13px; }
+}
+
+@media (max-width: 360px) {
+    .fixed-caption .text-caption { font-size: 6px; }
+    .fixed-caption { min-height: 20%; }
 }

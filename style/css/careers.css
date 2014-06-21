@@ -21,7 +21,7 @@ ul.job_list li.job_list_item { margin-bottom:20px; }
 .resume_form.always_show { display:block !important; }
 .resume_form.always_show .close_form_img{ display:none; }
 .close_form_img { width:24px; height:24px; position:absolute; right:5px; top:5px; cursor:pointer; }
-.form_top_row_left { float:left; width:400px; }
+.form_top_row_left { float:left; }
 .form_top_row_right { float:right; width:252px; text-align:center; }
 .input_label  { font-weight:bold; font-size:16px; color:#464646; }
 .form_trl_label { float:left; width:60px; text-align:left; margin-top:6px; }

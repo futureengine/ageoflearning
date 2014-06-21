@@ -2906,9 +2906,17 @@ textarea {
 	}
 
     .fixed-caption .text-caption { font-size: 13px; }
+    .resume_form input[type="text"],
+    .resume_form input[type="password"],
+    .resume_form .uneditable-input,
+    .resume_form .fake_input_box {
+        height: 38px;
+        padding: 3px;
+        max-width: 175px;
+    }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 400px) {
     .fixed-caption .text-caption { font-size: 6px; }
     .fixed-caption { min-height: 20%; }
 

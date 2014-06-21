@@ -65,7 +65,7 @@ ul.job_list li.job_list_item { margin-bottom:20px; }
 .shift_checkbox { width:30px; height:27px; display:inline; float:left; margin-right:6px; }
 .checkbox_label { float:left; position:relative; top:3px; font-size:15px; }
 
-#generic_submit { width:658px; padding:20px 27px; border:1px solid #cacaca; border-radius:2px; background-color:#eff0f0; margin-top:40px; margin-bottom:40px; }
+#generic_submit { padding:20px 27px; background-color:#eff0f0; margin-top:40px; margin-bottom:40px; }
 #dont_see_text { float:left; color:#0055ac; font-size:20px; line-height:22px; }
 .dont_see_submit { float:right; margin:0px; margin-top:4px; }
 .dont_see_submit.grayed_out { margin-bottom:0px; }

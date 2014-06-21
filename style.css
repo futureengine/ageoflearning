@@ -2005,7 +2005,8 @@ textarea {
 
 .files_input_container_container.file_input_container { width: 100%; clear: both; float: none; }
 
-
+#generic_submit .resume_form { padding: 20px 0 0; margin-bottom: 0; }
+#generic_submit strong { color: inherit; }
 
 /*-----------------------------------------------------------------------------------*/
 /*	PROGRESS BAR

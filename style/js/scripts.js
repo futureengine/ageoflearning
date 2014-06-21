@@ -975,6 +975,7 @@ jQuery(document).ready(function() {
                     var jobs_html = '';
                     jQuery.each(json_jobs, function(index, json_job){
                         var $template = $jobTemplate.clone().removeClass('job-template');
+                        json_job.department = departament_key;
 
                         var job_html = dataToHtml($template, json_job);
 

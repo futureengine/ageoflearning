@@ -3,66 +3,6 @@ var isIE8 = false;
 var isIE9 = false;
 if(userAgent.match(/MSIE 9/i)) { isIE9 = true; }
 if(userAgent.match(/MSIE 8/i)) { isIE8 = true; }
-var homepage_links = new Array("main_header");
-var curriculum_links = new Array("navColTab_curriculum","ch_curriculum");
-var developers_links = new Array("navColTab_developers","ch_developers");
-var qa_links = new Array("navColTab_qa","ch_qa");
-var cs_links = new Array("navColTab_cs","ch_cs");
-var animation_links = new Array("navColTab_animation","ch_animation");
-var illustration_links = new Array("navColTab_illustration","ch_illustration");
-var gd_links = new Array("navColTab_gd","ch_gd");
-var marketing_links = new Array("navColTab_marketing","ch_marketing");
-var international_links = new Array("navColTab_international","ch_international");
-var admin_links = new Array("navColTab_admin","ch_admin");
-var it_links = new Array("navColTab_it","ch_it");
-var anam_links = new Array("anam");
-var glenna_links = new Array("glennag");
-var honeylyn_links = new Array("honeylyn");
-var cate_links = new Array("catem");
-var david_links = new Array("davids");
-var tracy_links = new Array("tracyh");
-var julie_links = new Array("educators_talk_img","educators_talk_caption");
-var brandee_links = new Array("homeschool_vid_img","homeschool_vid_caption");
-var parent_testimonials = new Array("more_parent_testimonials");
-var teacher_testimonials = new Array("more_teacher_testimonials");
-
-ABCmouseUtils.addEventListener(window, "load", function() {
-	ABCmouseUtils.addEventListener(document.getElementById("navColTab_careers_home"), "click", function() { window.location = '/careers'; });
-	ABCmouseUtils.addEventListener(document.getElementById("navColTab_about_us"), "click", function() { window.location = '/careers/about_us'; });
-	ABCmouseUtils.addEventListener(document.getElementById("navColTab_parents_talk"), "click", function() { window.location = '/careers/parents_talk'; });
-	ABCmouseUtils.addEventListener(document.getElementById("navColTab_teachers_talk"), "click", function() { window.location = '/careers/teachers_talk'; });
-	//ABCmouseUtils.addEventListener(document.getElementById("navColTab_openings"), "click", function() { window.location = '/careers/openings'; });
-	ABCmouseUtils.addEventListeners(homepage_links, "click", function() { window.location = '/'; });
-	ABCmouseUtils.addEventListeners(curriculum_links, "click", function() { window.location = '/careers/curriculum'; });
-	ABCmouseUtils.addEventListeners(developers_links, "click", function() { window.location = '/careers/developers'; });
-	ABCmouseUtils.addEventListeners(qa_links, "click", function() { window.location = '/careers/qa'; });
-	ABCmouseUtils.addEventListeners(cs_links, "click", function() { window.location = '/careers/cs'; });
-	ABCmouseUtils.addEventListeners(animation_links, "click", function() { window.location = '/careers/animation'; });
-	ABCmouseUtils.addEventListeners(illustration_links, "click", function() { window.location = '/careers/illustration'; });
-	ABCmouseUtils.addEventListeners(gd_links, "click", function() { window.location = '/careers/gd'; });
-	ABCmouseUtils.addEventListeners(marketing_links, "click", function() { window.location = '/careers/marketing'; });
-	ABCmouseUtils.addEventListeners(international_links, "click", function() { window.location = '/careers/international'; });
-	ABCmouseUtils.addEventListeners(admin_links, "click", function() { window.location = '/careers/admin'; });
-	ABCmouseUtils.addEventListeners(it_links, "click", function() { window.location = '/careers/it'; });
-	ABCmouseUtils.addEventListeners(anam_links, "click", function(event) { ABCmouseUtils.changeVideoSrc('mendoza_60.mp4', event); });
-	ABCmouseUtils.addEventListeners(glenna_links, "click", function(event) { ABCmouseUtils.changeVideoSrc('glenna_gambrell.mp4', event); });
-	ABCmouseUtils.addEventListeners(honeylyn_links, "click", function(event) { ABCmouseUtils.changeVideoSrc('barnett_a_60.mp4', event); });
-	ABCmouseUtils.addEventListeners(cate_links, "click", function(event) { ABCmouseUtils.changeVideoSrc('cate_m_v2_remastered.mp4', event); });
-	ABCmouseUtils.addEventListeners(david_links, "click", function(event) { ABCmouseUtils.changeVideoSrc('simkins_60_1280x720_2113.mp4', event); });
-	ABCmouseUtils.addEventListeners(tracy_links, "click", function(event) { ABCmouseUtils.changeVideoSrc('hernandez_60_1280x720_2113.mp4', event); });
-	ABCmouseUtils.addEventListeners(julie_links, "click", function(event) { ABCmouseUtils.changeVideoSrc('educators_talk.mp4', event); });
-	ABCmouseUtils.addEventListeners(brandee_links, "click", function(event) { ABCmouseUtils.changeVideoSrc('brandee_ramirez.mp4', event); });
-	ABCmouseUtils.addEventListeners(parent_testimonials, "click", function() { ABCmouseUtils.showTestimonialPopup(); } );
-	ABCmouseUtils.addEventListeners(teacher_testimonials, "click", function() { ABCmouseUtils.showTestimonialPopup('T','teacher'); } );
-});
-
-function toggleJobView(jobID) {
-	var job_content_div = document.getElementById("job_content_"+jobID);
-	var arrow_image_div = document.getElementById("job_arrow_"+jobID);
-	
-	ABCmouseUtils.toggleClassName(job_content_div,'active_job');
-	ABCmouseUtils.toggleClassName(arrow_image_div,'active_job_arrow');
-}
 
 function updateFile(input, type) {
 	var idParts = input.id.split("_");

@@ -17,7 +17,7 @@ ul.job_list li.job_list_item { margin-bottom:20px; }
 .isMobile .apply_instructions { margin-bottom:50px; }
 .isMobile .submit_resume_button { display:none; }
 
-.resume_form { width:658px; padding:20px 27px; border:1px solid #cacaca; border-radius:2px; background-color:#eff0f0; margin:25px auto 30px; position:relative; display:none; }
+.resume_form { padding:20px 27px; background-color:#eff0f0; margin:25px auto 30px; position:relative; display:none; }
 .resume_form.always_show { display:block !important; }
 .resume_form.always_show .close_form_img{ display:none; }
 .close_form_img { width:24px; height:24px; position:absolute; right:5px; top:5px; cursor:pointer; }
@@ -31,34 +31,25 @@ ul.job_list li.job_list_item { margin-bottom:20px; }
 .form_trl_row { height:32px; margin-bottom:14px; }
 .form_trr_label { margin-top:30px; margin-bottom:10px; }
 .form_dropdown { width:136px; height:25px; font-size:16px; color:#464646; font-family:Arial, Helvetica, sans-serif; }
-.cover_letter_textarea { width:646px; height:170px; padding:5px; border:1px solid #00a6e5; resize:none; color:#666666; }
+.cover_letter_textarea { height:170px; padding:5px; border:1px solid #00a6e5; resize:none; color:#666666; }
 .supported_file_types { font-size:13px; color:#f63a1d; margin-top:5px; }
-.supported_file_types.code_samples_condition { text-align:left; position:absolute; top:29px; left:0px; }
 
-.cover_letter_input_container { margin-top:24px; position:relative; width:305px; height:32px; overflow:hidden; float:left; }
-.resume_input_container { margin-top:24px; position:relative; width:305px; height:32px; overflow:hidden; float:right; }
-.cover_letter_input { opacity:0.00; filter:alpha(opacity=0); position:absolute; top:-2px; left:-737px; z-index:2; font-size:71px; cursor:pointer; }
+.cover_letter_input { opacity:0; filter:alpha(opacity=0); position:absolute; left: 0; z-index:2; width:100% !important; }
 .resume_input { opacity:0.00; filter:alpha(opacity=0); position:absolute; top:-2px; left:-737px; z-index:2; font-size:71px; cursor:pointer; }
-.displayed_cover_letter_submit, .remove_cover_letter, .displayed_resume_submit, .remove_resume { width:131px; height:20px; background-color:#ff7200; border:2px solid #ff3c00; border-radius:3px; position:absolute; left:0px; top:4px; cursor:pointer; }
-.displayed_cover_letter_submit, .displayed_resume_submit { z-index:1; }
+
+.displayed_cover_letter_div, .displayed_resume_div { position:relative; z-index:1; }
 .remove_cover_letter, .remove_resume { z-index:3; display:none; }
 .displayed_cover_letter_glare, .remove_cover_letter_glare, .displayed_resume_glare, .remove_resume_glare { width:100%; height:50%; position:absolute; top:0px; left:0px; background-color:#ffffff; opacity:0.25; filter:alpha(opacity=25); border-radius:2px; }
 .displayed_cover_letter_text, .remove_cover_letter_text, .displayed_resume_text, .remove_resume_text { width:100%; text-align:center; font-family:"AofLCenturyGothicBold"; color:#ffffff; font-size:11px; position:relative; top:0px; }
-.displayed_resume_submit, .remove_resume { top:4px; right:0px; }
-.fake_input_box { width:151px; height:25px; padding:5px 5px 0px 5px; background-color:#ffffff; border:1px solid #00a6e5; white-space:nowrap; font-size:12px; overflow:hidden; color:#464646; }
-.fake_cover_letter_box { position:absolute; left:142px; top:0px; z-index:1; }
-.fake_resume_box { position:absolute; right:0px; top:0px; z-index:1; }
 
-.files_input_container_container { margin-top:28px; position:relative; width:360px; height:52px; float:left; }
-.files_input_container { position:relative; width:324px; height:32px; overflow:hidden; float:left; }
-.displayed_files_submit { width:150px; height:20px; background-color:#ff7200; border:2px solid #ff3c00; border-radius:3px; position:absolute; left:0px; top:4px; cursor:pointer; }
-.displayed_files_glare { width:100%; height:50%; position:absolute; top:0px; left:0px; background-color:#ffffff; opacity:0.25; filter:alpha(opacity=25); border-radius:2px; }
+.fake_input_box { width:151px; height:25px; padding:5px 5px 0px 5px; background-color:#ffffff; border:1px solid #00a6e5; white-space:nowrap; font-size:12px; overflow:hidden; color:#464646; }
+
+.files_input_container { float:left; }
 .displayed_files_text { width:100%; text-align:center; font-family:"AofLCenturyGothicBold"; color:#ffffff; font-size:11px; position:relative; top:0px; }
-.fake_code_samples_box { position:absolute; left:161px; top:0px; z-index:1; }
 .code_sample_input { opacity:0.00; filter:alpha(opacity=0); position:absolute; top:-2px; left:-808px; z-index:2; font-size:78px; cursor:pointer; }
-.fileList { width:298px; float:right; font-size:13px; color:#f63a1d; }
+.fileList { float:left; font-size:13px; color:#f63a1d; }
 .file_list_entry { white-space:nowrap; line-height:16px; }
-.remove_file_span { display:inline; color:#0055ac; text-decoration:underline; cursor:pointer; margin-left:5px; }
+.remove_file_span { display:inline; float: none; color:#0055ac; text-decoration:underline; cursor:pointer; margin-left:5px; }
 
 .portfolio_link_container { margin-top:28px; }
 .portfolio_link_label { float:left; width:118px; text-align:left; margin-top:6px; }
@@ -73,14 +64,6 @@ ul.job_list li.job_list_item { margin-bottom:20px; }
 .available_shift { width:250px; height:27px; margin-bottom:8px; float:left; }
 .shift_checkbox { width:30px; height:27px; display:inline; float:left; margin-right:6px; }
 .checkbox_label { float:left; position:relative; top:3px; font-size:15px; }
-
-.master_submit { width:127px; height:30px; background-color:#ff7200; border:3px solid #ff3c00; border-radius:5px; position:absolute; right:27px; bottom:28px; z-index:1; cursor:pointer; }
-.master_submit_glare { width:100%; height:50%; position:absolute; top:0px; left:0px; background-color:#ffffff; opacity:0.25; filter:alpha(opacity=25); border-radius:4px; }
-.master_submit_text { width:100%; text-align:center; font-family:"AofLCenturyGothicBold"; color:#ffffff; font-size:23px; position:relative; top:4px; }
-.master_submit_input { width:135px; height:38px; position:absolute; right:26px; bottom:27px; z-index:5; cursor:pointer; opacity:0.00; filter:alpha(opacity=0); }
-
-.master_submit.no_shift_required { position:static; bottom:auto; right:auto; margin:auto; position:relative; margin-top:30px; margin-bottom:10px; }
-.master_submit_input.no_shift_required { bottom:19px; right:289px; }
 
 #generic_submit { width:658px; padding:20px 27px; border:1px solid #cacaca; border-radius:2px; background-color:#eff0f0; margin-top:40px; margin-bottom:40px; }
 #dont_see_text { float:left; color:#0055ac; font-size:20px; line-height:22px; }

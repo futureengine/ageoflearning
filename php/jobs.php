@@ -11,14 +11,16 @@
 		$categories = array();
 		
 		foreach ($result['jobs'] as $key => $job) {
-			$departments = explode(',', $job['departments']);
+			if(is_array($job)){
+				$departments = explode(',', $job['departments']);
 
-			foreach ($departments as $department) {
+				foreach ($departments as $department) {
 
-				foreach ($job as $key => $value) {
-					$job[$key] =  nl2br($value);
+					foreach ($job as $key => $value) {
+						$job[$key] =  nl2br($value);
+					}
+					$categories[$department][] = $job;
 				}
-				$categories[$department][] = $job;
 			}
 		}
 		

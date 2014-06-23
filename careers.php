@@ -84,7 +84,17 @@
         <div class="dark-wrapper">
             <div class="container inner">
                 <div class="post">
-                    <h1 class="section-title">Careers</a></h1>
+                    <div class="messages">
+                        <?php if (isset($_SESSION['messages'])): ?>
+                            <div class="alert alert-success"><?php echo nl2br($_SESSION['messages']); ?></div>
+                        <?php endif; ?>
+                        <?php if (isset($_SESSION['errors'])): ?>
+                            <div class="alert alert-danger"><?php echo nl2br($_SESSION['errors']); ?></div>
+                        <?php endif; ?>
+                    </div>
+
+
+                    <h1 class="section-title">Careers</h1>
                     <figure class="media-wrapper"><img src="style/images/art/careers1.jpg" alt="" /></figure>
                     <p>ABCmouse.com is the global education initiative of Age of Learning, Inc. Our goal is to help build a strong foundation for future academic success by providing a comprehensive and engaging online curriculum that greatly assists young children to succeed in pre–k, kindergarten, early elementary school, and beyond.</p>
                     <p>Age of Learning, Inc. is looking for passionate individuals who can bring their talents to the world of early childhood education. We strive to bring meaningful education into children’s lives every day and are looking for the best and the brightest to help us accomplish this goal.</p>

@@ -55,7 +55,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="careers.html" >Careers</a>
+                                <a href="careers.php" >Careers</a>
                                 <ul class="dropdown-menu">
                                     <li></li>
                                     <li></li>
@@ -829,7 +829,7 @@
                                 <h4>Products</h4>
                             <a href="curriculum.html">
                                 <h4>Curriculum & Standards</h4>
-                            <a href="careers.html">
+                            <a href="careers.php">
                                 <h4>Careers</h4>
                             <a href="blog.html">
                                 <h4>Blog</h4>

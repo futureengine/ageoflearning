@@ -120,7 +120,7 @@ function processBody(){
 	}
 
 	$body .= '</table>';
-	$body .= '<p>Email Generated from Carrers page in Age of Learning Site, please don\'t reply to this message;</p>';
+	$body .= '<p>Email Generated from Carrers page in Age of Learning Site, please don\'t reply to this message.</p>';
 
 	return $body;
 }

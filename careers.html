@@ -114,8 +114,8 @@
 
                             <div id="resume_form_0" class="resume_form">
                                 <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_0">  
-                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(0);" action="" method="post" id="form_0">
-                                    <input type="hidden" value="subby" name="action">
+                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(0);" action="php/emailresume.php" method="post" id="form_0">
+                                    <input type="hidden" value="Generic" name="job">
                                     <input type="hidden" value="0" name="job_id">
                                     <input type="hidden" value="generic" name="category">
 
@@ -253,8 +253,8 @@
 
                                             <div id="resume_form_%%id%%" class="resume_form">
                                                 <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
-                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="" method="post" id="form_%%id%%">
-                                                    <input type="hidden" value="subby" name="action">
+                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="php/emailresume.php" method="post" id="form_%%id%%">
+                                                    <input type="hidden" value="%%title%%" name="job">
                                                     <input type="hidden" value="%%id%%" name="job_id">
                                                     <input type="hidden" value="%%department%%" name="category">
 
@@ -379,8 +379,8 @@
 
                                             <div id="resume_form_%%id%%" class="resume_form">
                                                 <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
-                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="" method="post" id="form_%%id%%">
-                                                    <input type="hidden" value="subby" name="action">
+                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="php/emailresume.php" method="post" id="form_%%id%%">
+                                                    <input type="hidden" value="%%title%%" name="job">
                                                     <input type="hidden" value="%%id%%" name="job_id">
                                                     <input type="hidden" value="%%department%%" name="category">
 
@@ -528,8 +528,8 @@
 
                                             <div id="resume_form_%%id%%" class="resume_form">
                                                 <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
-                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="" method="post" id="form_%%id%%">
-                                                    <input type="hidden" value="subby" name="action">
+                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="php/emailresume.php" method="post" id="form_%%id%%">
+                                                    <input type="hidden" value="%%title%%" name="job">
                                                     <input type="hidden" value="%%id%%" name="job_id">
                                                     <input type="hidden" value="%%department%%" name="category">
 
@@ -622,11 +622,13 @@
                                                     
                                                     <div id="available_shifts_%%id%%" class="available_shifts">
                                                         <div class="available_shift">
-                                                            <input type="checkbox" id="radio_shift_3_%%id%%" name="shifts[]" value="3" style="display: none;"><img onload="CustomRadioButton.add(this)" offimg="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" onimg="https://cdni.abcmouse.com/home/careers/checkbox_on.jpg" name="shifts[]" value="3" custominput="customCheckBox" src="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" class="shift_checkbox" id="shift_3_%%id%%">
+                                                            <!-- <input type="checkbox" id="radio_shift_3_%%id%%" name="shifts[]" value="3" style="display: none;" /> -->
+                                                            <img onload="CustomRadioButton.add(this)" offimg="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" onimg="https://cdni.abcmouse.com/home/careers/checkbox_on.jpg" name="shifts[]" value="3" custominput="customCheckBox" src="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" class="shift_checkbox" id="shift_3_%%id%%">
                                                             <div class="input_label checkbox_label">M &ndash; F 9:30 AM &ndash; 6:30 PM</div>
                                                         </div>
                                                         <div class="available_shift">
-                                                            <input type="checkbox" id="radio_shift_4_%%id%%" name="shifts[]" value="4" style="display: none;"><img onload="CustomRadioButton.add(this)" offimg="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" onimg="https://cdni.abcmouse.com/home/careers/checkbox_on.jpg" name="shifts[]" value="4" custominput="customCheckBox" src="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" class="shift_checkbox" id="shift_4_%%id%%">
+                                                            <!-- <input type="checkbox" id="radio_shift_4_%%id%%" name="shifts[]" value="4" style="display: none;" /> -->
+                                                            <img onload="CustomRadioButton.add(this)" offimg="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" onimg="https://cdni.abcmouse.com/home/careers/checkbox_on.jpg" name="shifts[]" value="4" custominput="customCheckBox" src="https://cdni.abcmouse.com/home/careers/checkbox_off.jpg" class="shift_checkbox" id="shift_4_%%id%%">
                                                             <div class="input_label checkbox_label">M &ndash; F 11:00 AM &ndash; 8:00 PM</div>
                                                         </div>
                                                     </div>
@@ -664,8 +666,8 @@
 
                                             <div id="resume_form_%%id%%" class="resume_form">
                                                 <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
-                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="" method="post" id="form_%%id%%">
-                                                    <input type="hidden" value="subby" name="action">
+                                                <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="php/emailresume.php" method="post" id="form_%%id%%">
+                                                    <input type="hidden" value="%%title%%" name="job">
                                                     <input type="hidden" value="%%id%%" name="job_id">
                                                     <input type="hidden" value="%%department%%" name="category">
 
@@ -746,9 +748,9 @@
                                                     <div class="portfolio_link_container">
                                                         <div class="input_label portfolio_link_label">Portfolio Link</div>
                                                         <div class="portfolio_input_div">
-                                                            <input type="text" value="" name="portfolio_link" id="portafolio_input_11710" class="portfolio_input">
+                                                            <input type="text" value="" name="portfolio_link" id="portafolio_input_%%id%%" class="portfolio_input">
                                                         </div>
-                                                        <div id="portafolio_error_11710" class="error_text portafolio_error">Please provide a portfolio link.</div>
+                                                        <div id="portafolio_error_%%id%%" class="error_text portafolio_error">Please provide a portfolio link.</div>
                                                     </div>
 
                                                     <div class="salary_request_container">

@@ -110,26 +110,30 @@ CustomRadioButton.ATTRIBUTES = new Array(
 //////////////////////////////////
 
 CustomRadioButton.add = function(imgElement) {
-	if(!hasValidMarkup(imgElement, CustomRadioButton.ATTRIBUTES)) return;
-	var name = imgElement.getAttribute("name");
+	// only add new code if element is not from template
+	var imageId = imgElement.getAttribute("id");
+	if( imageId.indexOf('%%id%%') < 0 ){
+		if(!hasValidMarkup(imgElement, CustomRadioButton.ATTRIBUTES)) return;
+		var name = imgElement.getAttribute("name");
 
-	if(CustomRadioButton.isACustomRadioButton(imgElement)) return;
+		if(CustomRadioButton.isACustomRadioButton(imgElement)) return;
 
-	var customRadioButton = null;
-	if(keyInArray(name, CustomRadioButton.radioButtons)) {
-		customRadioButton = CustomRadioButton.createCustomInput(imgElement);
-		CustomRadioButton.radioButtons[name].push(customRadioButton);
-	} else {
-		customRadioButton = CustomRadioButton.createCustomInput(imgElement);
-		CustomRadioButton.radioButtons[name] = new Array();
-		CustomRadioButton.radioButtons[name].push(customRadioButton);
+		var customRadioButton = null;
+		if(keyInArray(name, CustomRadioButton.radioButtons)) {
+			customRadioButton = CustomRadioButton.createCustomInput(imgElement);
+			CustomRadioButton.radioButtons[name].push(customRadioButton);
+		} else {
+			customRadioButton = CustomRadioButton.createCustomInput(imgElement);
+			CustomRadioButton.radioButtons[name] = new Array();
+			CustomRadioButton.radioButtons[name].push(customRadioButton);
+		}
+
+		//remove onload event
+		imgElement.onload = null;
+
+		customRadioButton.setup();
+		CustomRadioButton.updateRadioGroup(name);
 	}
-
-	//remove onload event
-	imgElement.onload = null;
-
-	customRadioButton.setup();
-	CustomRadioButton.updateRadioGroup(name);
 };
 
 //////////////////////////////////

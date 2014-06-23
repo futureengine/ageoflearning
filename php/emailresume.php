@@ -77,7 +77,7 @@ function processFiles(){
 			{
 				throw new Exception("Error while copying the uploaded file.", 1);
 			} else {
-				$files[$_FILES[$filename]['name']] = $path_of_uploaded_file;
+				$files[$filename.'-'.$_FILES[$filename]['name']] = $path_of_uploaded_file;
 			}
 		}
 	}
@@ -86,7 +86,7 @@ function processFiles(){
 }
 
 function processBody(){
-	print_r($_POST);exit();
+
 	// create body
 	$body = '<p>Information submitted:</p>';
 	$body .= '<table>';

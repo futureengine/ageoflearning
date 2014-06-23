@@ -1,12 +1,16 @@
 <?php
 error_reporting(E_ALL);
+session_start();
+
+// get origal page for redirect
+$referrer = $_SERVER['HTTP_REFERER'];
 
 // load mailer class
 require 'phpmailer/PHPMailerAutoload.php';
 
 // define human resources mail
-// define('HRMAIL', 'hr@aofl.com');
-define('HRMAIL', 'jeffry@webstudioswest.com'); //dev mail
+define('HRMAIL', 'hr@aofl.com');
+// define('HRMAIL', 'jeffry@webstudioswest.com'); //dev mail
 
 // create email from data
 try {
@@ -37,21 +41,22 @@ try {
 		
 		// send
 		if(!$mail->send()) {
-		    echo 'Message could not be sent.';
-		    echo 'Mailer Error: ' . $mail->ErrorInfo;
+			throw new Exception("Mailer Error: " . $mail->ErrorInfo.".", 1);
 		} else {
-		    echo 'Message has been sent';
+		    $_SESSION['messages'][] = "Application has been sent.";
 		}
-
-		exit();
 	} else {
 		throw new Exception("Error, no data provided.", 1);
-		exit();
 	}
 } catch (Exception $e) {
-	echo $e->getMessage();
+	$_SESSION['errors'][] = $e->getMessage();
 }
 
+// Redirect back to page
+header("Location:".$referrer);
+exit();
+
+// ************************** FUNCTIONS *****************************
 
 // crate array of uploaded files paths
 function processFiles(){

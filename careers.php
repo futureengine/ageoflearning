@@ -85,12 +85,27 @@
             <div class="container inner">
                 <div class="post">
                     <div class="messages">
-                        <?php if (isset($_SESSION['messages'])): ?>
-                            <div class="alert alert-success"><?php echo nl2br($_SESSION['messages']); ?></div>
+                        <?php session_start(); ?>
+                        <?php if (isset($_SESSION['messages']) && is_array($_SESSION['messages']) && count($_SESSION['messages'])): ?>
+                            <div class="alert alert-success">
+                            <?php
+                                foreach ($_SESSION['messages'] as $message) {
+                                    echo '<p>'.$message.'</p>';
+                                }
+                            ?>
+                            </div>
                         <?php endif; ?>
-                        <?php if (isset($_SESSION['errors'])): ?>
-                            <div class="alert alert-danger"><?php echo nl2br($_SESSION['errors']); ?></div>
+                        <?php if (isset($_SESSION['errors']) && is_array($_SESSION['errors']) && count($_SESSION['errors'])): ?>
+                            <div class="alert alert-danger">
+                            <?php
+                                foreach ($_SESSION['errors'] as $error) {
+                                    echo '<p>'.$error.'</p>';
+                                }
+                            ?>
+                            </div>
                         <?php endif; ?>
+                        <?php unset($_SESSION['messages']); ?>
+                        <?php unset($_SESSION['errors']); ?>
                     </div>
 
 

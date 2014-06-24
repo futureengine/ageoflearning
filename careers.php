@@ -130,15 +130,15 @@
                         
                         <div id="generic_submit">
                             <div id="dont_see_text">Don’t see a post that you’d like to apply for?<br><strong>Send your resumé for our consideration.</strong></div>
-                            <input type="button" value="Submit Resume" name="submit" id="submit_button_0" class="submit_resume btn btn-submit bm0 dont_see_submit" />
+                            <input type="button" value="Submit Resum&eacute;" name="submit" id="submit_button_0" class="submit_resume btn btn-submit bm0 dont_see_submit" />
                             <!-- <div onclick="showSubmissionForm(this.id);" class="submit_resume_button dont_see_submit" id="submit_button_0">
                                 <div class="submit_resume_glare"></div>
-                                <div class="submit_resume_text">Submit Resume<span class="acute_001">ú</span></div>
+                                <div class="submit_resume_text">Submit Resum&eacute;<span class="acute_001">ú</span></div>
                             </div> -->
                             <div class="clear"></div>
 
                             <div id="resume_form_0" class="resume_form">
-                                <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_0">  
+                                <i title="Close Form" class="close_form_img icon-cancel-circled" id="close_form_0"></i>
                                 <form enctype="multipart/form-data" onsubmit="return validateCareerForm(0);" action="php/emailresume.php" method="post" id="form_0">
                                     <input type="hidden" value="Generic" name="job">
                                     <input type="hidden" value="0" name="job_id">
@@ -200,14 +200,14 @@
                                     <div class="resume_input_container file_input_container">
                                         <div class="displayed_div">
                                             <div class="displayed_file_submit btn">
-                                                <div class="displayed_resume_text">Upload Resume<span class="acute_002">ú</span></div>
+                                                <div class="displayed_resume_text">Upload Resum&eacute;</span></div>
                                             </div>
                                             <div class="fake_input_box fake_resume_box" id="resume_0"></div>
                                         </div>
                                         <input type="file" onchange="updateFile(this,'resume');" name="resume" class="resume_input file_input" id="resume_input_0">   
 
                                         <div onclick="removeFile(this,'resume');" class="remove_resume remove_file btn" id="remove_resume_0">
-                                            <div class="remove_resume_text">Remove Resumé</div>
+                                            <div class="remove_resume_text">Remove Resum&eacute;</div>
                                         </div>
                                     </div>
                                     <div class="clear"></div>
@@ -274,10 +274,10 @@
                                                 %%qualifications%%
                                             </div>
 
-                                            <input type="button" value="Submit Resume" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
+                                            <input type="button" value="Submit Resum&eacute;" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
 
                                             <div id="resume_form_%%id%%" class="resume_form">
-                                                <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
+                                                <i title="Close Form" class="close_form_img icon-cancel-circled" id="close_form_%%id%%"></i>
                                                 <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="php/emailresume.php" method="post" id="form_%%id%%">
                                                     <input type="hidden" value="%%title%%" name="job">
                                                     <input type="hidden" value="%%id%%" name="job_id">
@@ -339,14 +339,14 @@
                                                     <div class="resume_input_container file_input_container">
                                                         <div class="displayed_div">
                                                             <div class="displayed_file_submit btn">
-                                                                <div class="displayed_resume_text">Upload Resume<span class="acute_002">ú</span></div>
+                                                                <div class="displayed_resume_text">Upload Resum&eacute;</span></div>
                                                             </div>
                                                             <div class="fake_input_box fake_resume_box" id="resume_%%id%%"></div>
                                                         </div>
                                                         <input type="file" onchange="updateFile(this,'resume');" name="resume" class="resume_input file_input" id="resume_input_%%id%%">   
 
                                                         <div onclick="removeFile(this,'resume');" class="remove_resume remove_file btn" id="remove_resume_%%id%%">
-                                                            <div class="remove_resume_text">Remove Resumé</div>
+                                                            <div class="remove_resume_text">Remove Resum&eacute;</div>
                                                         </div>
                                                     </div>
                                                     <div class="clear"></div>
@@ -400,10 +400,10 @@
                                                 %%qualifications%%
                                             </div>
 
-                                            <input type="button" value="Submit Resume" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
+                                            <input type="button" value="Submit Resum&eacute;" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
 
                                             <div id="resume_form_%%id%%" class="resume_form">
-                                                <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
+                                                <i title="Close Form" class="close_form_img icon-cancel-circled" id="close_form_%%id%%"></i>
                                                 <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="php/emailresume.php" method="post" id="form_%%id%%">
                                                     <input type="hidden" value="%%title%%" name="job">
                                                     <input type="hidden" value="%%id%%" name="job_id">
@@ -465,14 +465,14 @@
                                                     <div class="resume_input_container file_input_container">
                                                         <div class="displayed_div">
                                                             <div class="displayed_file_submit btn">
-                                                                <div class="displayed_resume_text">Upload Resume<span class="acute_002">ú</span></div>
+                                                                <div class="displayed_resume_text">Upload Resum&eacute;</span></div>
                                                             </div>
                                                             <div class="fake_input_box fake_resume_box" id="resume_%%id%%"></div>
                                                         </div>
                                                         <input type="file" onchange="updateFile(this,'resume');" name="resume" class="resume_input file_input" id="resume_input_%%id%%">   
 
                                                         <div onclick="removeFile(this,'resume');" class="remove_resume remove_file btn" id="remove_resume_%%id%%">
-                                                            <div class="remove_resume_text">Remove Resumé</div>
+                                                            <div class="remove_resume_text">Remove Resum&eacute;</div>
                                                         </div>
                                                     </div>
                                                     <div class="clear"></div>
@@ -549,10 +549,10 @@
                                                 %%qualifications%%
                                             </div>
 
-                                            <input type="button" value="Submit Resume" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
+                                            <input type="button" value="Submit Resum&eacute;" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
 
                                             <div id="resume_form_%%id%%" class="resume_form">
-                                                <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
+                                                <i title="Close Form" class="close_form_img icon-cancel-circled" id="close_form_%%id%%"></i>
                                                 <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="php/emailresume.php" method="post" id="form_%%id%%">
                                                     <input type="hidden" value="%%title%%" name="job">
                                                     <input type="hidden" value="%%id%%" name="job_id">
@@ -614,14 +614,14 @@
                                                     <div class="resume_input_container file_input_container">
                                                         <div class="displayed_div">
                                                             <div class="displayed_file_submit btn">
-                                                                <div class="displayed_resume_text">Upload Resume<span class="acute_002">ú</span></div>
+                                                                <div class="displayed_resume_text">Upload Resum&eacute;</span></div>
                                                             </div>
                                                             <div class="fake_input_box fake_resume_box" id="resume_%%id%%"></div>
                                                         </div>
                                                         <input type="file" onchange="updateFile(this,'resume');" name="resume" class="resume_input file_input" id="resume_input_%%id%%">   
 
                                                         <div onclick="removeFile(this,'resume');" class="remove_resume remove_file btn" id="remove_resume_%%id%%">
-                                                            <div class="remove_resume_text">Remove Resumé</div>
+                                                            <div class="remove_resume_text">Remove Resum&eacute;</div>
                                                         </div>
                                                     </div>
                                                     <div class="clear"></div>
@@ -687,10 +687,10 @@
                                                 %%qualifications%%
                                             </div>
 
-                                            <input type="button" value="Submit Resume" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
+                                            <input type="button" value="Submit Resum&eacute;" name="submit" id="submit_button_%%id%%" class="submit_resume btn btn-submit bm0" />
 
                                             <div id="resume_form_%%id%%" class="resume_form">
-                                                <img title="Close Form" alt="X" src="https://cdni.abcmouse.com/home/careers/close_form.png" class="close_form_img" id="close_form_%%id%%">  
+                                                <i title="Close Form" class="close_form_img icon-cancel-circled" id="close_form_%%id%%"></i>
                                                 <form enctype="multipart/form-data" onsubmit="return validateCareerForm(%%id%%);" action="php/emailresume.php" method="post" id="form_%%id%%">
                                                     <input type="hidden" value="%%title%%" name="job">
                                                     <input type="hidden" value="%%id%%" name="job_id">
@@ -752,14 +752,14 @@
                                                     <div class="resume_input_container file_input_container">
                                                         <div class="displayed_div">
                                                             <div class="displayed_file_submit btn">
-                                                                <div class="displayed_resume_text">Upload Resume<span class="acute_002">ú</span></div>
+                                                                <div class="displayed_resume_text">Upload Resum&eacute;</span></div>
                                                             </div>
                                                             <div class="fake_input_box fake_resume_box" id="resume_%%id%%"></div>
                                                         </div>
                                                         <input type="file" onchange="updateFile(this,'resume');" name="resume" class="resume_input file_input" id="resume_input_%%id%%">   
 
                                                         <div onclick="removeFile(this,'resume');" class="remove_resume remove_file btn" id="remove_resume_%%id%%">
-                                                            <div class="remove_resume_text">Remove Resumé</div>
+                                                            <div class="remove_resume_text">Remove Resum&eacute;</div>
                                                         </div>
                                                     </div>
                                                     <div class="clear"></div>
